@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3ebdvblm14ct"]
+
+[ext_resource type="Texture2D" uid="uid://3iuotkm1jxq0" path="res://Textures/TacticGameGroundTilesTestDiagonal.png" id="1_newrw"]
+[ext_resource type="Script" path="res://Scenes/movement_controller.gd" id="2_ad0ys"]
+[ext_resource type="PackedScene" uid="uid://dp46kxeuhmw5j" path="res://Characters/witch.tscn" id="3_e0ww3"]
+[ext_resource type="PackedScene" uid="uid://bdk1f6efhxr26" path="res://components/selector.tscn" id="4_x8l4m"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lpe4l"]
+texture = ExtResource("1_newrw")
+texture_region_size = Vector2i(48, 48)
+0:0/0 = 0
+0:0/0/custom_data_0 = true
+1:0/0 = 0
+1:0/0/custom_data_0 = true
+2:0/0 = 0
+2:0/0/custom_data_0 = true
+0:1/0 = 0
+0:1/0/custom_data_0 = true
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/custom_data_1 = true
+0:2/0 = 0
+0:2/0/custom_data_0 = true
+1:2/0 = 0
+1:2/0/custom_data_0 = true
+2:2/0 = 0
+2:2/0/custom_data_1 = true
+0:3/0 = 0
+0:3/0/custom_data_1 = true
+1:3/0 = 0
+1:3/0/custom_data_1 = true
+2:3/0 = 0
+2:3/0/custom_data_1 = true
+
+[sub_resource type="TileSet" id="TileSet_1k5dt"]
+tile_shape = 1
+tile_layout = 4
+tile_size = Vector2i(48, 48)
+custom_data_layer_0/name = "walkable"
+custom_data_layer_0/type = 1
+custom_data_layer_1/name = "wall"
+custom_data_layer_1/type = 1
+sources/2 = SubResource("TileSetAtlasSource_lpe4l")
+
+[node name="Level" type="Node2D"]
+
+[node name="my_TileMap" type="TileMap" parent="."]
+y_sort_enabled = true
+tile_set = SubResource("TileSet_1k5dt")
+format = 2
+layer_0/name = "terrain"
+layer_0/y_sort_enabled = true
+layer_0/tile_data = PackedInt32Array(0, 2, 0, 65536, 2, 0, 131072, 2, 0, 196608, 2, 0, 262144, 2, 0, 327680, 2, 0, 393216, 131074, 3, 458752, 131074, 3, 524288, 131074, 2, 589824, 2, 0, 655360, 2, 0, 720896, 2, 0, 786432, 2, 0, 851968, 2, 0, 917504, 2, 0, 524281, 2, 0, 262141, 2, 0, 327677, 2, 0, 393213, 2, 0, 458749, 2, 0, 524285, 2, 0, 589821, 2, 0, 655357, 2, 0, 720893, 2, 0, 786429, 2, 0, 262142, 2, 0, 327678, 2, 0, 393214, 2, 0, 458750, 2, 0, 524286, 2, 0, 589822, 2, 0, 655358, 2, 0, 720894, 2, 0, 786430, 2, 0, 262143, 2, 0, 327679, 2, 0, 393215, 2, 0, 458751, 131074, 3, 524287, 131074, 3, 589823, 2, 0, 655359, 2, 0, 720895, 2, 0, 786431, 2, 0, 196609, 2, 0, 262145, 2, 0, 327681, 2, 0, 393217, 131074, 3, 458753, 131074, 3, 524289, 131074, 2, 589825, 131074, 2, 655361, 2, 0, 720897, 2, 0, 196610, 2, 0, 262146, 2, 0, 327682, 2, 0, 393218, 2, 0, 458754, 2, 0, 524290, 131074, 2, 589826, 131074, 2, 655362, 2, 0, 720898, 2, 0, 196611, 2, 0, 262147, 2, 0, 327683, 2, 0, 393219, 2, 0, 458755, 2, 0, 524291, 131074, 2, 589827, 131074, 2, 655363, 2, 0, 720899, 2, 0, 262148, 2, 0, 327684, 2, 0, 393220, 2, 0, 458756, 2, 0, 524292, 2, 0, 655364, 2, 0, 524282, 2, 0, 524283, 2, 0, 524284, 2, 0, 393212, 2, 0, 458748, 2, 0, 393211, 2, 0, 458747, 2, 0, 458746, 2, 0, 589818, 2, 0, 655355, 2, 0, 720892, 2, 0, 589819, 2, 0, 589820, 2, 0, 655356, 2, 0, 851966, 2, 0, 917503, 2, 0, 851967, 2, 0, 786433, 2, 0, 786434, 2, 0, 589829, 2, 0, 524294, 2, 0, 458759, 2, 0, 458757, 2, 0, 458758, 2, 0, 524293, 2, 0, 393221, 2, 0, 393222, 2, 0, 327685, 2, 0, 131073, 2, 0, 131074, 2, 0, 65537, 2, 0, 196607, 2, 0, 196606, 2, 0, 131071, 2, 0, 327676, 2, 0, 851969, 2, 0, 589828, 2, 0)
+layer_1/name = "overlay"
+layer_1/y_sort_enabled = true
+layer_1/z_index = 1
+layer_1/navigation_enabled = false
+layer_1/tile_data = PackedInt32Array()
+
+[node name="movement_controller" type="Node2D" parent="."]
+script = ExtResource("2_ad0ys")
+tile_map = Object(TileMap,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","visible":true,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"clip_children":0,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":true,"y_sort_enabled":true,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"position":Vector2(0, 0),"rotation":0.0,"scale":Vector2(1, 1),"skew":0.0,"tile_set":SubResource("TileSet_1k5dt"),"rendering_quadrant_size":16,"collision_animatable":false,"collision_visibility_mode":0,"navigation_visibility_mode":0,"format":2,"layer_0/name":"terrain","layer_0/enabled":true,"layer_0/modulate":Color(1, 1, 1, 1),"layer_0/y_sort_enabled":true,"layer_0/y_sort_origin":0,"layer_0/z_index":0,"layer_0/navigation_enabled":true,"layer_0/tile_data":PackedInt32Array(0, 2, 0, 65536, 2, 0, 131072, 2, 0, 196608, 2, 0, 262144, 2, 0, 327680, 2, 0, 393216, 131074, 3, 458752, 131074, 3, 524288, 131074, 2, 589824, 2, 0, 655360, 2, 0, 720896, 2, 0, 786432, 2, 0, 851968, 2, 0, 917504, 2, 0, 524281, 2, 0, 262141, 2, 0, 327677, 2, 0, 393213, 2, 0, 458749, 2, 0, 524285, 2, 0, 589821, 2, 0, 655357, 2, 0, 720893, 2, 0, 786429, 2, 0, 262142, 2, 0, 327678, 2, 0, 393214, 2, 0, 458750, 2, 0, 524286, 2, 0, 589822, 2, 0, 655358, 2, 0, 720894, 2, 0, 786430, 2, 0, 262143, 2, 0, 327679, 2, 0, 393215, 2, 0, 458751, 131074, 3, 524287, 131074, 3, 589823, 2, 0, 655359, 2, 0, 720895, 2, 0, 786431, 2, 0, 196609, 2, 0, 262145, 2, 0, 327681, 2, 0, 393217, 131074, 3, 458753, 131074, 3, 524289, 131074, 2, 589825, 131074, 2, 655361, 2, 0, 720897, 2, 0, 196610, 2, 0, 262146, 2, 0, 327682, 2, 0, 393218, 2, 0, 458754, 2, 0, 524290, 131074, 2, 589826, 131074, 2, 655362, 2, 0, 720898, 2, 0, 196611, 2, 0, 262147, 2, 0, 327683, 2, 0, 393219, 2, 0, 458755, 2, 0, 524291, 131074, 2, 589827, 131074, 2, 655363, 2, 0, 720899, 2, 0, 262148, 2, 0, 327684, 2, 0, 393220, 2, 0, 458756, 2, 0, 524292, 2, 0, 655364, 2, 0, 524282, 2, 0, 524283, 2, 0, 524284, 2, 0, 393212, 2, 0, 458748, 2, 0, 393211, 2, 0, 458747, 2, 0, 458746, 2, 0, 589818, 2, 0, 655355, 2, 0, 720892, 2, 0, 589819, 2, 0, 589820, 2, 0, 655356, 2, 0, 851966, 2, 0, 917503, 2, 0, 851967, 2, 0, 786433, 2, 0, 786434, 2, 0, 589829, 2, 0, 524294, 2, 0, 458759, 2, 0, 458757, 2, 0, 458758, 2, 0, 524293, 2, 0, 393221, 2, 0, 393222, 2, 0, 327685, 2, 0, 131073, 2, 0, 131074, 2, 0, 65537, 2, 0, 196607, 2, 0, 196606, 2, 0, 131071, 2, 0, 327676, 2, 0, 851969, 2, 0, 589828, 2, 0),"layer_1/name":"overlay","layer_1/y_sort_enabled":true,"layer_1/z_index":1,"layer_1/navigation_enabled":false,"layer_1/tile_data":PackedInt32Array(),"script":null)
+
+selector = Object(Area2D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","visible":true,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":true,"y_sort_enabled":false,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"position":Vector2(24, 24),"rotation":0.0,"scale":Vector2(1, 1),"skew":0.0,"disable_mode":0,"collision_layer":1,"collision_mask":1,"collision_priority":1.0,"input_pickable":true,"monitoring":true,"monitorable":true,"priority":0,"gravity_space_override":0,"gravity_point":false,"gravity_point_unit_distance":0.0,"gravity_point_center":Vector2(0, 1),"gravity_direction":Vector2(0, 1),"gravity":980.0,"linear_damp_space_override":0,"linear_damp":0.1,"angular_damp_space_override":0,"angular_damp":1.0,"audio_bus_override":false,"audio_bus_name":&"Master","script":null)
+
+
+[node name="Witch" parent="." instance=ExtResource("3_e0ww3")]
+position = Vector2(48, 48)
+
+[node name="selector" parent="." instance=ExtResource("4_x8l4m")]
+position = Vector2(24, 24)

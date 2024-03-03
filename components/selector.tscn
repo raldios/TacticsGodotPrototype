@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdk1f6efhxr26"]
+
+[ext_resource type="Texture2D" uid="uid://f2e4w2tot3bf" path="res://Textures/CharacterSelectElementsV2.png" id="1_yep3q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxow0"]
+atlas = ExtResource("1_yep3q")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06yrh"]
+atlas = ExtResource("1_yep3q")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfsr2"]
+atlas = ExtResource("1_yep3q")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7sgn6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxow0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06yrh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfsr2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="selector" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_7sgn6")
+autoplay = "default"

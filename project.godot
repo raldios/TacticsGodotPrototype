@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Trpg Movement"
-run/main_scene="res://Scenes/level.tscn"
+run/main_scene="res://levels/level.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://Textures/icon.svg"
 
@@ -22,6 +22,19 @@ window/size/viewport_height=384
 window/size/window_width_override=768
 window/size/window_height_override=768
 window/stretch/mode="canvas_items"
+
+[input]
+
+select={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(123, 20),"global_position":Vector2(127, 61),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+"de select"={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(106, 27),"global_position":Vector2(110, 68),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
 
 [rendering]
 
